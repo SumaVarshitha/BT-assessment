@@ -1,8 +1,6 @@
 ipcrm/java_webapp_war:
   Env:
     - JAVA_HOME: "/usr/lib/jvm/jre-openjdk"
-  PreBuild:
-    - mvn -s settings.xml -B dependency:go-offline
   Build:
     - mvn -s settings.xml -B clean deploy
   PkgInclude:
