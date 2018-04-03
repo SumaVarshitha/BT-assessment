@@ -5,7 +5,7 @@
   <artifactId>java-webapp</artifactId>
   <packaging>war</packaging>
   <name>java-webapp</name>
-  <version>1.2</version>
+  <version>1.2-SNAPSHOT</version>
   <url>http://maven.apache.org</url>
 
   <properties>
@@ -92,5 +92,13 @@
       </plugin>
     </plugins>
   </build>
+
+  <distributionManagement>
+    <snapshotRepository>
+      <id>snapshots</id>
+      <name>f5c609a99f33-snapshots</name>
+      <url>http://services.pdx.puppet.vm:8081/artifactory/libs-snapshot-local</url>
+    </snapshotRepository>
+  </distributionManagement>
 
 </project>
