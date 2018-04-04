@@ -4,12 +4,12 @@
   <servers>
     <server>
       <username>admin</username>
-      <password>AP8swANcRSNxWKMEJP7gq1J3X4g</password>
+      <password>puppetlabs</password>
       <id>central</id>
     </server>
     <server>
       <username>admin</username>
-      <password>AP8swANcRSNxWKMEJP7gq1J3X4g</password>
+      <password>puppetlabs</password>
       <id>snapshots</id>
     </server>
   </servers>
