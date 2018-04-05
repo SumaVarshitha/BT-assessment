@@ -1,7 +1,14 @@
 ipcrm/java_webapp_war:
   Env:
     - JAVA_HOME: "/usr/lib/jvm/jre-openjdk"
+    - APP_ENV: "dev"
   Build:
     - mvn -s settings.xml -B clean deploy
   PkgInclude:
     - 'target/classes/app.yaml'
+  PostInstall:
+    - export PATH=$PATH:/opt/puppetlabs/puppet/bin:/opt/puppetlabs/bin
+    - NODES=$(puppet query "inventory[certname] { facts.java_webapp = \"$APP_ENV\" }"|./jq --raw-output .[].certname | tr '\n' ','|sed 's/,$//g')
+    - LB=$(puppet query "inventory[certname] { facts.java_webapp_lb = \"yes\" }"|./jq --raw-output .[].certname | tr '\n' ','|sed 's/,$//g')
+    - bolt plan run profile::deploy_tomcat --transport pcp lb=$LB backend="${APP_ENV}_java_webapp_bk" app_servers=$NODES deploy_location="/opt/apache-tomcat8/webapps/java_webapp.war" artifactory_base="http://10.32.169.45:8081/artifactory" repository="libs-snapshot-local" token=AKCp5aTbdjtYPbNiGEbmJFcgS39DqChZUd5RmMA35wrHFDUDcCzxFrzaLCxV45zeXeFGpSm4P --modulepath=/etc/puppetlabs/code/environments/production/site
+
