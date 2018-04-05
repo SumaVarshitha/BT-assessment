@@ -12,5 +12,5 @@ ipcrm/java_webapp_war:
     - export MODULEPATH=/etc/puppetlabs/code/environments/production/modules:/etc/puppetlabs/code/environments/production/site:/etc/puppetlabs/code/modules:/opt/puppetlabs/puppet/modules
     - NODES=$(puppet query "inventory[certname] { facts.java_webapp = \"$APP_ENV\" }"|jq --raw-output .[].certname | tr '\n' ','|sed 's/,$//g')
     - LB=$(puppet query "inventory[certname] { facts.java_webapp_lb = \"yes\" }"|jq --raw-output .[].certname | tr '\n' ','|sed 's/,$//g')
-    - sudo /opt/puppetlabs/puppet/bin/bolt plan run profile::deploy_tomcat --transport pcp lb=$LB backend="${APP_ENV}_java_webapp_bk" app_servers=$NODES deploy_location="/opt/apache-tomcat8/webapps/java_webapp.war" artifactory_base="http://10.32.169.45:8081/artifactory" repository="libs-snapshot-local" token=AKCp5aTbdjtYPbNiGEbmJFcgS39DqChZUd5RmMA35wrHFDUDcCzxFrzaLCxV45zeXeFGpSm4P --modulepath=$MODULEPATH
+    - sudo /opt/puppetlabs/puppet/bin/bolt plan run profile::deploy_tomcat --transport pcp lb=$LB backend="${APP_ENV}_java_webapp_bk" app_servers=$NODES deploy_location="/opt/apache-tomcat8/webapps/java-webapp.war" artifactory_base="http://10.32.169.45:8081/artifactory" repository="libs-snapshot-local" token=AKCp5aTbdjtYPbNiGEbmJFcgS39DqChZUd5RmMA35wrHFDUDcCzxFrzaLCxV45zeXeFGpSm4P --modulepath=$MODULEPATH
 
