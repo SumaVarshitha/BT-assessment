@@ -7,7 +7,7 @@ ipcrm/java_webapp_war:
   PkgInclude:
     - 'target/classes/app.yaml'
   PostInstall:
-    - mv app.yaml /var/tmp/app.yaml
+    - mv target/classes/app.yaml /var/tmp/app.yaml
     - export PATH=$PATH:/opt/puppetlabs/puppet/bin:/opt/puppetlabs/bin:/usr/local/bin
     - export MODULEPATH=/etc/puppetlabs/code/environments/production/modules:/etc/puppetlabs/code/environments/production/site:/etc/puppetlabs/code/modules:/opt/puppetlabs/puppet/modules
     - NODES=$(puppet query "inventory[certname] { facts.java_webapp = \"$APP_ENV\" }"|jq --raw-output .[].certname | tr '\n' ','|sed 's/,$//g')
