@@ -30,6 +30,6 @@ steps:
     TomcatUrl: 'http://3.134.77.52:8080/'
     Username: 'admin'
     Password: 'admin'
-    Warfile: '/home/vsts/work/1/s/target/java-webapp-1.2-shaded.war'
+    Warfile: '/home/vsts/work/1/s/target/*.war'
     Context: '/man'
     ServerVersion: '7OrAbove'
