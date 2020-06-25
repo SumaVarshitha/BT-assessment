@@ -20,3 +20,16 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(build.sourcesdirectory)'
+    Contents: '**/*.war'
+    TargetFolder: '$(build.artifactstagingdirectory)'
+- task: TomcatDeployment@1
+  inputs:
+    TomcatUrl: 'http://3.134.77.52:8080/'
+    Username: 'admin'
+    Password: 'admin'
+    Warfile: '/home/vsts/work/1/s/target/java-webapp-1.2-shaded.war'
+    Context: '/man'
+    ServerVersion: '7OrAbove'
