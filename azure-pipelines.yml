@@ -25,6 +25,10 @@ steps:
     SourceFolder: '$(build.sourcesdirectory)'
     Contents: '**/*.war'
     TargetFolder: '$(build.artifactstagingdirectory)'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'man'
 - task: TomcatDeployment@1
   inputs:
     TomcatUrl: 'http://3.134.77.52:8080/'
