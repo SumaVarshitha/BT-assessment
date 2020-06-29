@@ -4,13 +4,13 @@ pipeline{
         maven "mvn"
     }
     stages{
-        stage('Git clone'){
+      /*  stage('Git clone'){
             steps{
                 sh ' rm -rf java-tomcat-maven-example'
             sh 'git clone --branch master http://SumaVarshitha:sumasuji268@github.com/SumaVarshitha/java-tomcat-maven-example.git'
             }
             
-        }
+        }*/
             stage('build'){
                 steps{
                     sh 'mvn -f  java-tomcat-maven-example/pom.xml clean install'
