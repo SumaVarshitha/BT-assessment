@@ -13,7 +13,7 @@ pipeline{
         }*/
             stage('build'){
                 steps{
-                    sh 'mvn -f  java-tomcat-maven-example/pom.xml clean install'
+                    sh 'mvn clean install'
                 }
                 }
             stage('deploy to tomcat'){
