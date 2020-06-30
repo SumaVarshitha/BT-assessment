@@ -28,7 +28,7 @@ pipeline{
 		
 		
 			 
-			sh 'curl -v -u admin:admin -T java-tomcat-maven-example/target/java-tomcat-maven-example.war http://18.216.136.124:8080//manager/text/deploy?path=/bunny'
+			sh 'curl -v -u admin:admin -T target/java-tomcat-maven-example.war http://18.216.136.124:8080//manager/text/deploy?path=/bunny'
 		
 		
 			 
