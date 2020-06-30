@@ -24,11 +24,11 @@ pipeline{
 		
 		
 			 
-			sh 'curl http://http://18.216.136.124/:8080//manager/text/undeploy?path=/bunny -u admin:admin'
+			sh 'curl http://http://18.216.136.124:8080//manager/text/undeploy?path=/bunny -u admin:admin'
 		
 		
 			 
-			sh 'curl -v -u admin:admin -T java-tomcat-maven-example/target/java-tomcat-maven-example.war http://http://18.216.136.124/:8080//manager/text/deploy?path=/bunny'
+			sh 'curl -v -u admin:admin -T java-tomcat-maven-example/target/java-tomcat-maven-example.war http://http://18.216.136.124:8080//manager/text/deploy?path=/bunny'
 		
 		
 			 
