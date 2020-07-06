@@ -19,3 +19,4 @@ ENV PATH ${M2_HOME}/bin:${PATH}
 # node installation
 RUN wget https://nodejs.org/dist/v6.9.2/node-v6.9.2-linux-x64.tar.gz
 RUN sudo tar -xf node-v6.9.2-linux-x64.tar.gz --directory /usr/local --strip-components 1
+COPY ./ ./
