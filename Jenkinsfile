@@ -37,6 +37,12 @@ lib 'shlib'
 		    
                 sh "mvn clean package"
             }
-        }
+	}
+	    stage('sonar'){
+		    steps{
+			     withSonarQubeEnv('sonar') {
+				     sh 'mvn  sonar:sonar'}}
+              }
+    
     }
 }
