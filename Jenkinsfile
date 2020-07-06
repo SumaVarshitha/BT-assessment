@@ -31,6 +31,7 @@ lib 'shlib'
 	    stage('clone'){
 		    steps{
 			    sh 'git clone https://github.com/SumaVarshitha/BT-assessment.git'
+		    }}
         stage('build') {
             steps {
 		    
