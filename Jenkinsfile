@@ -24,8 +24,8 @@ lib 'shlib'
              }*/
 	
 	agent {
-		//docker { image 'node:7-alpine' }
-		dockerfile true
+	   docker { image 'sumavarshitha/java-maven-node' }
+		//dockerfile true
 	}
     stages {
         stage('Test') {
