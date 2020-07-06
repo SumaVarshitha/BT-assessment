@@ -23,7 +23,7 @@ lib 'shlib'
              }*/
 	
 	agent {
-		dockerfile {filename "Dockerfile"}
+		dockerfile true
 	}
     stages {
         stage('Test') {
