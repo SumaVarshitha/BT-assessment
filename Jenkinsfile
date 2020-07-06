@@ -30,7 +30,7 @@ lib 'shlib'
     stages {
 	    stage('clone'){
 		    steps{
-			    sh 'sudo rm -rf BT-assessment'
+			    //sh 'sudo rm -rf BT-assessment'
 			    sh 'git clone https://github.com/SumaVarshitha/BT-assessment.git'
 		    }}
         stage('build') {
