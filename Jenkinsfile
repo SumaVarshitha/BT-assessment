@@ -1,4 +1,5 @@
 pipeline{
+	
 	/*libraries{
 lib 'shlib'
 }
@@ -29,7 +30,7 @@ lib 'shlib'
     stages {
         stage('Test') {
             steps {
-                sh "node --version"
+                sh "mvn clean package"
             }
         }
     }
