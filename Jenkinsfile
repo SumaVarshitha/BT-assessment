@@ -28,8 +28,12 @@ lib 'shlib'
 		//dockerfile true
 	}
     stages {
-        stage('Test') {
+	    stage('clone'){
+		    steps{
+			    sh 'git clone 
+        stage('build') {
             steps {
+		    
                 sh "mvn clean package"
             }
         }
