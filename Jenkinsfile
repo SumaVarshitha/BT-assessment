@@ -23,12 +23,12 @@ lib 'shlib'
              }*/
 	
 	agent {
-		dockerfile true
+		dockerfile {filename "Dockerfile"}
 	}
     stages {
         stage('Test') {
             steps {
-                sh 'node --version'
+                sh "node --version"
             }
         }
     }
