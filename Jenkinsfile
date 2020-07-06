@@ -23,7 +23,7 @@ lib 'shlib'
              }*/
 	
 	agent {
-		dockerfile true
+		docker { image 'node:7-alpine' }
 	}
     stages {
         stage('Test') {
