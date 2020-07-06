@@ -1,5 +1,5 @@
 pipeline{
-	libraries{
+	/*libraries{
 lib 'shlib'
 }
     agent any 
@@ -20,5 +20,14 @@ lib 'shlib'
 			dep() 
 		}
 		}
-             }
+             }*/
+	
+	agent { dockerfile true }
+    stages {
+        stage('Test') {
+            steps {
+                sh 'node --version'
+            }
+        }
+    }
 }
