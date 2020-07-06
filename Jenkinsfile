@@ -28,7 +28,7 @@ lib 'shlib'
     stages {
         stage('Test') {
             steps {
-                RUN 'node --version'
+                sh 'node --version'
             }
         }
     }
