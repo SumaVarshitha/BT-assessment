@@ -33,7 +33,7 @@ lib 'shlib'
 		  //  agent {
 			 //   docker { image 'sumavarshitha/java-maven-node' }}
 		    steps{
-			    sh 'sudo rm -rf /var/lib/jenkins/workspace/mickey/BT-assessment'
+			    //sh 'sudo rm -rf /var/lib/jenkins/workspace/mickey/BT-assessment'
 			    sh 'git clone https://github.com/SumaVarshitha/BT-assessment.git'
 		    }}
         stage('build') {
