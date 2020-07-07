@@ -21,8 +21,9 @@ pipeline {
         stage('SonarQube Analysis'){
             steps{
                withSonarQubeEnv('sonar'){
-                     sh '${sonarscanner}/bin/sonar-scanner -Dproject.settings=./sonar-project.properties'
-                }
+                    // sh '${sonarscanner}/bin/sonar-scanner -Dproject.settings=./sonar-project.properties'
+               sh 'mvn sonr:sonar' 
+	       }
             }
         }
 
