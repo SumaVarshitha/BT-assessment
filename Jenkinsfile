@@ -22,29 +22,31 @@ lib 'shlib'
 		}
 		}
              }*/
-	agent none
-	
+	//agent none
+	 agent {
+			    docker { image 'sumavarshitha/java-maven-node' }
 	
 		//dockerfile true
-	}
+	 }
     stages {
 	    stage('clone'){
-		    agent {
-	   docker { image 'sumavarshitha/java-maven-node' }
+		  //  agent {
+			 //   docker { image 'sumavarshitha/java-maven-node' }}
 		    steps{
 			    sh 'sudo rm -rf /var/lib/jenkins/workspace/mickey/BT-assessment'
 			    sh 'git clone https://github.com/SumaVarshitha/BT-assessment.git'
 		    }}}
         stage('build') {
             steps {
-		    agent {
-	   docker { image 'sumavarshitha/java-maven-node' }
+		   // agent {
+	   //docker { image 'sumavarshitha/java-maven-node' }
                 sh "mvn clean package"
             }
 	    }}
 	    
 	    stage('sonar'){
 		    steps{
+			  //  agent 
 			     withSonarQubeEnv('sonar') {
 				     sh 'mvn  sonar:sonar'}}
               }
