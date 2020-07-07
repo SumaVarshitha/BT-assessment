@@ -18,12 +18,12 @@ pipeline {
         }
         stage('SonarQube Analysis'){
 		 environment{
-               scannerHome = tool 'sonars'
+               sonarscanner = tool 'sonars'
                    }
             steps{
                withSonarQubeEnv('sonar'){
-                    //sh '${sonarscanner}/bin/sonar-scanner -Dproject.settings=./sonar-project.properties'
-		       sh "${scannerHome}/bin/sonar-scanner"
+                    sh '${sonarscanner}/bin/sonar-scanner -Dproject.settings=./sonar-project.properties'
+		       //sh "${scannerHome}/bin/sonar-scanner"
                //sh 'mvn sonr:sonar' 
 	       }
             }
