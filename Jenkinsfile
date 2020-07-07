@@ -1,9 +1,7 @@
 pipeline {
     agent any
    
-    environment{
-        sonarscanner = tool 'sonar'
-    }
+   
     stages {
 	    //stage('remove'){
 		 
@@ -19,9 +17,13 @@ pipeline {
 	    }
         }
         stage('SonarQube Analysis'){
+		 environment{
+               scannerHome = tool 'sonar'
+                   }
             steps{
                withSonarQubeEnv('sonar'){
-                    sh '${sonarscanner}/bin/sonar-scanner -Dproject.settings=./sonar-project.properties'
+                    //sh '${sonarscanner}/bin/sonar-scanner -Dproject.settings=./sonar-project.properties'
+		       sh "${scannerHome}/bin/sonar-scanner"
                //sh 'mvn sonr:sonar' 
 	       }
             }
