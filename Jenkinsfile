@@ -35,13 +35,13 @@ lib 'shlib'
 		    steps{
 			    sh 'sudo rm -rf /var/lib/jenkins/workspace/mickey/BT-assessment'
 			    sh 'git clone https://github.com/SumaVarshitha/BT-assessment.git'
-		    }}}
+		    }}
         stage('build') {
             steps {
 		   // agent {
 	   //docker { image 'sumavarshitha/java-maven-node' }
                 sh "mvn clean package"
-            }
+            
 	    }}
 	    
 	    stage('sonar'){
@@ -52,4 +52,5 @@ lib 'shlib'
               }
     
     }
+}
 
