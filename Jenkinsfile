@@ -17,8 +17,8 @@ pipeline {
 	    }
         }
         stage('SonarQube Analysis'){
-		tool
-		{ mvn 'maven'}
+		tools
+		{ maven 'mvn'}
 		 environment{
                sonarscanner = tool 'sonars'
                    }
