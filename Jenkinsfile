@@ -24,14 +24,14 @@ lib 'shlib'
 		//{ maven 'mvn'}
 		// environment{
                //sonarscanner = tool 'sonars'
-                   }
+                  // }
             steps{
               // withSonarQubeEnv('sonar'){
                    // sh '${sonarscanner}/bin/sonar-scanner -Dproject.settings=./sonar-project.properties'
 		       //sh "${scannerHome}/bin/sonar-scanner"
               // sh 'mvn sonar:sonar'
-		    sonarqude()
-	       }
+		    sonarqube()
+	       //}
             }
         }
 
