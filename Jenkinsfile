@@ -1,4 +1,7 @@
 pipeline {
+	libraries{
+lib 'shlib'
+}
     agent none
   
     stages {
@@ -9,24 +12,25 @@ pipeline {
 		   agent {
 			   docker { image 'sumavarshitha/java-maven-node' }}
 		steps {
-			sh 'rm -rf assessmentdocker' 
-	        sh 'git clone https://github.com/SumaVarshitha/assessmentdocker.git'
-                sh "mvn clean package"
-            
+			//sh 'rm -rf assessmentdocker' 
+	        //sh 'git clone https://github.com/SumaVarshitha/assessmentdocker.git'
+               // sh "mvn clean package"
+                  dockerbuild()
 	    }
         }
         stage('SonarQube Analysis'){
 		  agent { label 'master' }
 		//tools
 		//{ maven 'mvn'}
-		 environment{
-               sonarscanner = tool 'sonars'
+		// environment{
+               //sonarscanner = tool 'sonars'
                    }
             steps{
-               withSonarQubeEnv('sonar'){
-                    sh '${sonarscanner}/bin/sonar-scanner -Dproject.settings=./sonar-project.properties'
+              // withSonarQubeEnv('sonar'){
+                   // sh '${sonarscanner}/bin/sonar-scanner -Dproject.settings=./sonar-project.properties'
 		       //sh "${scannerHome}/bin/sonar-scanner"
-              // sh 'mvn sonar:sonar' 
+              // sh 'mvn sonar:sonar'
+		    sonarqude()
 	       }
             }
         }
