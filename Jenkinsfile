@@ -1,15 +1,13 @@
 pipeline {
-    //agent none
-   agent {
-			   docker { image 'sumavarshitha/java-maven-node' }}
-   
+    agent none
+  
     stages {
 	    //stage('remove'){
 		 
         stage('build') {
             
-		   //agent {
-		//	   docker { image 'sumavarshitha/java-maven-node' }}
+		   agent {
+			   docker { image 'sumavarshitha/java-maven-node' }}
 		steps {
 			sh 'rm -rf assessmentdocker' 
 	        sh 'git clone https://github.com/SumaVarshitha/assessmentdocker.git'
@@ -18,7 +16,7 @@ pipeline {
 	    }
         }
         stage('SonarQube Analysis'){
-		 // agent { label 'master' }
+		  agent { label 'master' }
 		//tools
 		//{ maven 'mvn'}
 		 environment{
