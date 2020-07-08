@@ -16,8 +16,7 @@ pipeline {
         }
         stage('SonarQube Analysis'){
 		  agent { label 'master' }
-		//tools
-		//{ maven 'mvn'}
+		
 		 environment{
                sonarscanner = tool 'sonars'
                    }
