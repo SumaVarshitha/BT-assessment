@@ -51,7 +51,7 @@ pipeline {
     }
 }
 */
-Pipeline {
+pipeline {
 	 tools {
         maven "mymaven"   
     }   
