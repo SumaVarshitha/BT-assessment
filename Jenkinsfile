@@ -51,7 +51,7 @@ pipeline {
 		   // sonarqube()
 	       }
             }
-       // }
+       }
 
     
         
@@ -62,6 +62,6 @@ pipeline {
 		    //qualitygate()
               }
             }
-        //}
+        }
     }
 }
