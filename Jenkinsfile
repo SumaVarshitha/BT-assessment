@@ -29,7 +29,7 @@ pipeline {
 		
 		 //environment{
                //sonarscanner = tool 'sonars'
-                   }
+                   //}
             steps{
                /*withSonarQubeEnv('sonar'){
                    // sh '${sonarscanner}/bin/sonar-scanner -Dproject.settings=./sonar-project.properties'
@@ -60,7 +60,7 @@ pipeline {
              //  waitForQualityGate abortPipeline: true
 		    qualitygate()
              // }
-            }
+           }
         }
     }
 }
