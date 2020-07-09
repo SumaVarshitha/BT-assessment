@@ -8,9 +8,9 @@ pipeline {
     stages {
 	    stage('clonestage'){
 		    steps{
-		   sh 'rm -rf assessmentdocker' 
-	        sh 'git clone https://github.com/SumaVarshitha/assessmentdocker.git'
-		    //clonerepo()
+		  // sh 'rm -rf assessmentdocker' 
+	        //sh 'git clone https://github.com/SumaVarshitha/assessmentdocker.git'
+		    clonerepo()
 		    }}
 		 
         stage('build') {
@@ -27,14 +27,14 @@ pipeline {
         
         stage('SonarQube Analysis'){
 		
-		 environment{
-               sonarscanner = tool 'sonars'
+		 //environment{
+               //sonarscanner = tool 'sonars'
                    }
             steps{
-              withSonarQubeEnv('sonar'){
+               /*withSonarQubeEnv('sonar'){
                    // sh '${sonarscanner}/bin/sonar-scanner -Dproject.settings=./sonar-project.properties'
 		       //sh "${scannerHome}/bin/sonar-scanner"
-               sh """mvn sonar:sonar -Dsonar.projectKeySumaVarshitha_assessmentdocker 
+              sh """mvn sonar:sonar -Dsonar.projectKeySumaVarshitha_assessmentdocker 
 	    -Dsonar.organization=sumavarshitha
 	    -Dsonar.projectName=assessmentdocker
      	     -Dsonar.projectVersion=1.0
@@ -46,9 +46,9 @@ pipeline {
              -Dsonar.java.coveragePlugin=jacoco
 	     -Dsonar.sourceEncoding=UTF-8
 	     -Dsonar.coverage.jacoco.xmlReportPaths = target/site/jacoco/*.xml 
-	     -Dsonar.exclusions = **/*.html,**/*.css,**/*.js,**/*.xml,assessmentdocker/src/main/java/com/puppet/sample/*.java=true """
-		   // sonarqube()
-	       }
+	     -Dsonar.exclusions = **/*.html,**/*.css,**/*.js,**/*.xml,assessmentdocker/src/main/java/com/puppet/sample/*.java=true """*/
+		    sonarqube()
+	       //}
             }
        }
 
@@ -56,10 +56,10 @@ pipeline {
         
       stage("Quality Gate") {
             steps {
-             timeout(time: 3, unit: 'MINUTES') {
-               waitForQualityGate abortPipeline: true
-		    //qualitygate()
-              }
+            // timeout(time: 3, unit: 'MINUTES') {
+             //  waitForQualityGate abortPipeline: true
+		    qualitygate()
+             // }
             }
         }
     }
