@@ -1,5 +1,8 @@
 @Library('shlib')_
 pipeline {
+	 tools {
+        maven "mvn"   
+    }   
     agent any
   
     stages {
