@@ -2,9 +2,9 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.puppet.sample</groupId>
-  <artifactId>java-webapp</artifactId>
+  <artifactId>assessmentdocker</artifactId>
   <packaging>war</packaging>
-  <name>java-webapp</name>
+  <name>assessmentdocker</name>
   <version>1.2</version>
   <url>http://maven.apache.org</url>
 
@@ -49,7 +49,7 @@
   </dependencies>
 
   <build>
-    <finalName>java-webapp</finalName>
+    <finalName>assessmentdocker</finalName>
     <resources>
       <resource>
         <directory>src/main/resources</directory>
