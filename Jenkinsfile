@@ -1,4 +1,4 @@
-//@Library('shlib')_
+@Library('shlib')_
 pipeline {
 	 tools {
         maven "mymaven"   
@@ -16,9 +16,10 @@ pipeline {
         stage('build') {
             steps {
 			  
-                 docker.image("sumavarshitha/java-maven-node").inside(){
-                      sh "mvn clean package"
-        }
+                 //docker.image("sumavarshitha/java-maven-node").inside(){
+                     // sh "mvn clean package"
+                  // }
+		    dockerbuild()
                 }
 			
             
