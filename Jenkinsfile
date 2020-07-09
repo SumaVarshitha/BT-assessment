@@ -14,12 +14,10 @@ pipeline {
 		    }}
 		 
         stage('build') {
-            
-		 
-		steps {
-	          // dockerbuild()
-        docker.image("sumavarshitha/java-maven-node").inside(){
-          sh "mvn clean package"
+            steps {
+			  
+                 docker.image("sumavarshitha/java-maven-node").inside(){
+                      sh "mvn clean package"
         }
                 }
 			
