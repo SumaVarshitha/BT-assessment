@@ -59,7 +59,7 @@ Pipeline {
   
     stages {
 	    //stage('remove'){
-	    stages {
+	   // stages {
 	    stage('clonestage'){
 		    steps{
 		   sh 'rm -rf assessmentdocker' 
