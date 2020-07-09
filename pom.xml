@@ -12,21 +12,7 @@
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  <sonar.projectKey>SumaVarshitha_assessmentdocker</sonar.projectKey>
-  <sonar.organization>sumavarshitha</sonar.organization>
-  <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-  <sonar.login>3fa5fe8e70188ad3bb3916f98dafdf1203781adc</sonar.login>
-  <sonar.coverage.jacoco.xmlReportPaths>target/surefire-reports/TEST-com.puppet.sample.PolyglotTest.xml</sonar.coverage.jacoco.xmlReportPaths>
-    <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
-    <jacoco.version>0.7.2.201409121644</jacoco.version>
-<sonar-jacoco-listeners.version>1.4</sonar-jacoco-listeners.version>
-    <jacoco.outputDir>${project.build.directory}</jacoco.outputDir>
-    <jacoco.out.ut.file>jacoco-ut.exec</jacoco.out.ut.file>
-    <sonar.jacoco.reportPath>${jacoco.outputDir}/${jacoco.out.ut.file}</sonar.jacoco.reportPath>
-<jacoco.out.it.file>jacoco-it.exec</jacoco.out.it.file>
-<sonar.jacoco.itReportPath>${jacoco.outputDir}/${jacoco.out.it.file}</sonar.jacoco.itReportPath>
-
-</properties>
+  </properties>
 
   <dependencies>
     <dependency>
