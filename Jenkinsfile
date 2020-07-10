@@ -28,13 +28,13 @@ pipeline {
 		 environment{
                sonarscanner = tool 'sonars'
                    }
-            steps{
-               withSonarQubeEnv('sonar'){
+          steps{
+           withSonarQubeEnv('sonar'){
                    // sh '${sonarscanner}/bin/sonar-scanner -Dproject.settings=./sonar-project.properties'
 		     // sh "${scannerHome}/bin/sonar-scanner"
-              sh """${sonarscanner}/bin/sonar-scanner -Dsonar.projectKey=SumaVarshitha_assessmentdocker\ 
-	    -Dsonar.organization=sumavarshitha\
-	    -Dsonar.projectName=assessmentdocker\
+            sh "${sonarscanner}/bin/sonar-scanner -Dsonar.projectKey=SumaVarshitha_assessmentdocker\ 
+	     -Dsonar.organization=sumavarshitha\
+	     -Dsonar.projectName=assessmentdocker\
      	     -Dsonar.projectVersion=1.0\
 	     -Dsonar.language=java\
              -Dsonar.sources=src\
@@ -44,7 +44,7 @@ pipeline {
              -Dsonar.java.coveragePlugin=jacoco\
 	     -Dsonar.sourceEncoding=UTF-8\
 	     -Dsonar.coverage.jacoco.xmlReportPaths = target/site/jacoco/*.xml\ 
-	     -Dsonar.exclusions = **///*//.html,**/*.css,**/*.js,**/*.xml,assessmentdocker/src/main/java/com/puppet/sample/*.java=true"""
+	     -Dsonar.exclusions = **///*//.html,**/*.css,**/*.js,**/*.xml,assessmentdocker/src/main/java/com/puppet/sample/*.java=true"
 		    //sonarqube()
 	       }
             }
