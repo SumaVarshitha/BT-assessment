@@ -1,5 +1,5 @@
 @Library(['shlib@master'])_
-pipeline 'pipelinelib'
+pipeline(currentBuild.getNumber())
 	
 	 
     /*agent any
