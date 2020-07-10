@@ -1,11 +1,8 @@
-@Library('shlib')_
-pipeline {
-	tools
-	{
-		maven "mymaven"
-	}
+@Library(['shlib@master'])_
+pipeline { echo "pipeline successfull" }
+	
 	 
-    agent any
+    /*agent any
   
     stages {
 	    stage('clonestage'){
@@ -53,4 +50,4 @@ pipeline {
            }
         }
     }
-}
+}*/
