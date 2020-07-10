@@ -1,5 +1,9 @@
 @Library('shlib')_
 pipeline {
+	tools
+	{
+		maven "mymaven"
+	}
 	 
     agent any
   
