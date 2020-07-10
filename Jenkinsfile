@@ -1,5 +1,5 @@
 @Library(['shlib@master'])_
-pipeline { echo "pipeline successfull" }
+pipeline {  }
 	
 	 
     /*agent any
