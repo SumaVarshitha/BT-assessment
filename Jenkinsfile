@@ -34,7 +34,7 @@ pipeline {
                withSonarQubeEnv('sonar'){
                    // sh '${sonarscanner}/bin/sonar-scanner -Dproject.settings=./sonar-project.properties'
 		       //sh "${scannerHome}/bin/sonar-scanner"
-              sh """mvn sonar:sonar -Dsonar.projectKeySumaVarshitha_assessmentdocker 
+              sh """mvn sonar:sonar -Dsonar.projectKey=SumaVarshitha_assessmentdocker 
 	    -Dsonar.organization=sumavarshitha
 	    -Dsonar.projectName=assessmentdocker
      	     -Dsonar.projectVersion=1.0
