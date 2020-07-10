@@ -27,11 +27,11 @@ pipeline {
         
         stage('SonarQube Analysis'){
 		
-		 //environment{
-               //sonarscanner = tool 'sonars'
-                   //}
+		 environment{
+               sonarscanner = tool 'sonars'
+                   }
             steps{
-               /*withSonarQubeEnv('sonar'){
+               withSonarQubeEnv('sonar'){
                    // sh '${sonarscanner}/bin/sonar-scanner -Dproject.settings=./sonar-project.properties'
 		       //sh "${scannerHome}/bin/sonar-scanner"
               sh """mvn sonar:sonar -Dsonar.projectKeySumaVarshitha_assessmentdocker 
@@ -46,9 +46,9 @@ pipeline {
              -Dsonar.java.coveragePlugin=jacoco
 	     -Dsonar.sourceEncoding=UTF-8
 	     -Dsonar.coverage.jacoco.xmlReportPaths = target/site/jacoco/*.xml 
-	     //-Dsonar.exclusions = **///*//.html,**/*.css,**/*.js,**/*.xml,assessmentdocker/src/main/java/com/puppet/sample/*.java=true """*/
-		    sonarqube()
-	       //}
+	     -Dsonar.exclusions = **///*//.html,**/*.css,**/*.js,**/*.xml,assessmentdocker/src/main/java/com/puppet/sample/*.java=true """*/
+		    //sonarqube()
+	       }
             }
        }
 
