@@ -1,5 +1,5 @@
 @Library(['shlib@master'])_
-pipeline()
+pipeline 'pipelinelib'
 	
 	 
     /*agent any
