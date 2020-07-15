@@ -1,5 +1,6 @@
 @Library(['shlib@master'])_
-pipelinelibrary()
-	
+pipelinelibrary{
+	giturl = 'https://github.com/SumaVarshitha/assessmentdocker.git'
+}
 	 
    
