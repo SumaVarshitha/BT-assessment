@@ -5,12 +5,8 @@ pipeline {
         //jdk 'jdk8' 
     }
   
-   
-  /*  environment{
-        sonarscanner = tool 'sonar'
-    }*/
+ 
     stages {
-	    //stage('remove'){
 		 
         stage('build') {
 		steps {
