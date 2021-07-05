@@ -15,6 +15,21 @@ pipeline {
                 sh "mvn clean package"
             
 	    }
+		
+
         }
+    
+    stage('sonar') {
+	    
+	    environment{
+               scannerHome = tool 'sonars'
+                   }
+		steps {
+			 withSonarQubeEnv('sonar'){
+                    //sh '${sonarscanner}/bin/sonar-scanner -Dproject.settings=./sonar-project.properties'
+		       sh "sonars/bin/sonar-scanner"
+				 
+			 }
     }
 }
+    }}
